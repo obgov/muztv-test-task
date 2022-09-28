@@ -64,9 +64,11 @@ GROUP BY books.id HAVING COUNT(books.id) = 3</b>
 Предположим следующую таблицу clients: id, login, pwd, email.
 
 <b>Вариант 1: выведет дубликаты записей по email + их количество
+  
 SELECT email, COUNT(email) as amount FROM clients GROUP BY email HAVING COUNT(email) > 1
   
 Вариант 2: выведет повторяющиеся записи
+  
 SELECT * FROM clients WHERE `email` IN (SELECT `email` FROM `clients` GROUP BY `email` HAVING COUNT(*) > 1) ORDER BY id</b>
 
 7. Импорт / экспорт
