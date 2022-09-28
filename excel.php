@@ -20,7 +20,7 @@ class ExcelIO
         $this->importBooks();
     }
 
-    public function importBooks(): void
+    private function importBooks(): void
     {
         $this->reader->setReadDataOnly(true);
 
