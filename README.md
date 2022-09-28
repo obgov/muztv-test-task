@@ -36,6 +36,7 @@ SELECT books.title, COUNT(authors_books.book_id) as authors FROM books
 JOIN authors_books ON books.id = authors_books.book_id
 GROUP BY books.id HAVING COUNT (books.id) = 3</b>
 
+
 4. Основы работы с фото
 
 Задача: одну и ту же фото надо показываться в разных разрешения в разных местах сайта. Например, фото в анонсе новости одного размера, в теле новости второго размера, в мобильном приложении – третьего размера. Редактор контента грузит одно исходное фото. Предложите варианты решения задачи.<br>
