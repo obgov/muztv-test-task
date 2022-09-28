@@ -16,26 +16,28 @@
 <br>
 <b>Вариант 1 (менее гибкий):
 watch --interval=13 /usr/bin/php /path/to/important_script.php
-
+  
 Вариант 2 (более гибкий):
 Использовать systemd timer.</b>
 <br>
 3. БД — SQL (MySQL)
+4. 
+Задача: требуется хранить свою библиотеку в БД. Волнуют названия книг и авторы — больше ничего хранить не надо. Предложите структуру таблиц.
 
-Задача: требуется хранить свою библиотеку в БД. Волнуют названия книг и авторы — больше ничего хранить не надо. Предложите структуру таблиц.<br>
 <b>
 Authors (id, name)
 Books (id, title)
 Authors_books (author_id, book_id)</b>
-<br>
-Выбрать список книг, которые написаны 3-мя со-авторами. То есть получить отчет «книга — количество соавторов» и отфильтровать те, у которых 3 соавтора.<br>
+
+Выбрать список книг, которые написаны 3-мя со-авторами. То есть получить отчет «книга — количество соавторов» и отфильтровать те, у которых 3 соавтора.
+
 <b>
 SELECT books.title, COUNT(authors_books.book_id) as authors FROM books
 JOIN authors_books ON books.id = authors_books.book_id
 GROUP BY books.id HAVING COUNT (books.id) = 3</b>
 
 4. Основы работы с фото
-
+5. 
 Задача: одну и ту же фото надо показываться в разных разрешения в разных местах сайта. Например, фото в анонсе новости одного размера, в теле новости второго размера, в мобильном приложении – третьего размера. Редактор контента грузит одно исходное фото. Предложите варианты решения задачи.<br>
 
 <b>Вариант 1: использовать resize класс (файл resize.php).
@@ -51,8 +53,7 @@ GROUP BY books.id HAVING COUNT (books.id) = 3</b>
 
 <b>Вариант 1:
 SELECT email, COUNT(email) as amount FROM clients GROUP BY email HAVING COUNT(email) > 1
-
-
+  
 Вариант 2:
 SELECT * FROM clients WHERE `email` IN (SELECT `email` FROM `clients` GROUP BY `email` HAVING COUNT(*) > 1) ORDER BY id</b>
 
