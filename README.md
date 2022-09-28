@@ -10,7 +10,7 @@
 - количество уникальных пользователей
 <br>
 <b>Вариант реализации содержится в banner.php.</b>
-
+<br>
 2. Основы работы с unix shell
 Задача: есть script.php который что-то там делает критичное. Нужно, чтобы скрипт запускался каждые 13 секунд. 
 <br>
@@ -19,7 +19,7 @@ watch --interval=13 /usr/bin/php /path/to/important_script.php
 
 Вариант 2 (более гибкий):
 Использовать systemd timer.</b>
-
+<br>
 3. БД — SQL (MySQL)
 
 Задача: требуется хранить свою библиотеку в БД. Волнуют названия книг и авторы — больше ничего хранить не надо. Предложите структуру таблиц.<br>
@@ -27,7 +27,7 @@ watch --interval=13 /usr/bin/php /path/to/important_script.php
 Authors (id, name)
 Books (id, title)
 Authors_books (author_id, book_id)</b>
-
+<br>
 Выбрать список книг, которые написаны 3-мя со-авторами. То есть получить отчет «книга — количество соавторов» и отфильтровать те, у которых 3 соавтора.<br>
 <b>
 SELECT books.title, COUNT(authors_books.book_id) as authors FROM books
