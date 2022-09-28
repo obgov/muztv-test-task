@@ -35,7 +35,7 @@ Authors_books (author_id, book_id)</b>
 SELECT books.title, COUNT(authors_books.book_id) as authors FROM books
 JOIN authors_books ON books.id = authors_books.book_id
 GROUP BY books.id HAVING COUNT (books.id) = 3</b>
-
+<br>
 
 4. Основы работы с фото
 
