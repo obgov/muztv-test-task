@@ -18,7 +18,7 @@ $db->query('UPDATE banner_shows SET shows = shows + 1 WHERE id = 5');
  *
  * Вариант 3: куки. Механизм аналогичен сессиям.
  *
- * Сильно упрощенный вариант реализации первого варианта ниже:
+ * Сильно упрощенный вариант реализации первого варианта ниже
  */
 $ip = $_SERVER['REMOTE_ADDR'];
 $checkUnique = $db->prepare('SELECT * FROM visitors WHERE ip = ?');
